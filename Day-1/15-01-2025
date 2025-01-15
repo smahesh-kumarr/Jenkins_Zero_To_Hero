@@ -1,0 +1,32 @@
+Jenkins => Automation Tool
+It Handle both the CI/CD
+
+Continuous Integration and 
+Continuous Delivery -> [Deployment manual approval needed]
+Continuous Deployment -> [no manual approval needed]
+
+Code -> Git -> Sonar -> Maven Build-> Test -> Package -> Docker Image ->
+
+
+Alternatives of Jenkins => Github actions | Gitlab CICD | Circle CI | Bambo CI | Travis CI |
+
+Enterprise Edition is cloudbees (Majority of company using the jenkins)
+
+
+Titles going to covered 
+
+Jobs
+Freestyle
+Pipeline
+multi branch
+multiconfig
+folder
+
+Plugins
+Creds
+
+Parameter
+
+backup
+Master/Slave
+

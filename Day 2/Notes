@@ -1,0 +1,90 @@
+After installing the Jenkins
+If you are going to change the port 
+
+systemctl edit jenkins --full
+
+## Change the Port 8080 to 8090 some other you need
+
+## After that restart the service
+systemctl reload jenkins
+systemctl restart jenkins
+systemctl status jenkins
+
+
+====================================================================
+
+New Items
+    Freestyle Project:
+            Scenario
+                When to Use: If you want to run simple tasks like compiling code, running tests, or deploying artifacts.
+            Example: 
+                A job that compiles a Java project using Maven and then runs unit tests.
+            Key Features
+                Supports build triggers (like SCM polling or scheduled builds).
+                Integrates with plugins for additional functionality.
+    
+    
+    Pipeline : 
+            Scenario
+                When to Use: For end-to-end automation involving multiple stages.
+            Example:
+                 A CI/CD pipeline that builds, tests, deploys, and sends notifications when complete.
+            Key Features
+                Declarative or scripted pipeline syntax.
+                Stages and steps allow detailed control of workflow.
+    
+    
+    Multi-Configuration Project
+            Scenario
+                When you want to test on multiple environments (different OS, versions of Java, or browser types).
+            Example:
+                 A job that tests a web application on Chrome, Firefox, and Edge browsers simultaneously.
+            Key Features
+                Supports multiple combinations of variables.
+                Allows parallel builds for different configurations.
+    
+    
+    Folder 
+            Scenario:
+                When to Use: To group related projects by teams or applications.
+            Example:
+                 A folder named "E-Commerce" containing jobs for checkout service, product catalog, and user authentication builds.
+            Key Features
+                Allows nested folders for hierarchical job organization.
+                Access control can be applied per folder.
+
+
+    Multi-Branch Pipeline
+            Scenario:    
+                When to Use: For Git-based projects where different branches require separate builds.
+            Example: 
+                A pipeline for a project with main, develop, and feature/* branches.
+            Key Features
+                Automatically detects and runs pipelines on new branches.
+                Works well with GitHub, Bitbucket, and other SCMs.
+
+                
+    Organization Folder
+            Scenario
+                When to Use: When managing builds for many repositories within an organization.
+            Example: 
+                A GitHub organization folder that scans all repositories and creates pipelines for those with Jenkinsfile.
+            Key Features
+                Automatically manages multiple repositories.    
+                Integrates with GitHub Organizations or Bitbucket Teams.
+===========================================================================================================================================
+To navigate to the Workspace => /var/lib/jenkins/workspace
+                                ls -ld */
+                                ls -rlt or ls -la
+
+Task ->
+Create a Jenkins Master
+Make a public maven project to build
+Install maven tool on jenkins
+Create a event on maven Like clean and Package
+Test the maven repo
+Makesure the artifacts stored in the workspace
+Make the jar to deploy
+Create the Successfull Test Result 
+Use env variables used by the Jenkins
+Finally Try this Jenkins Master

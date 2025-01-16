@@ -88,3 +88,77 @@ Make the jar to deploy
 Create the Successfull Test Result 
 Use env variables used by the Jenkins
 Finally Try this Jenkins Master
+
+
+===========================================================================================================================================
+
+Task -> 2
+
+1. Make SSH Connection to Github
+
+    Jenkins ------------------------------> Github
+ (Credentials)                             (SSH Key)
+       |                                       |
+       V                                       V
+    Private Key                            Public Key
+
+2. ssh-keygen -t ed25519 -C "your_email@example.com"
+3. cat /root/.ssh/id_ed25519.pub =>public key
+4  cat /root/.ssh/id_ed25519  =>private key
+5. Use of the credentials in jenkins create a ssh & authendication use of while in SCM (git credentials)
+
+(1. It may Several Hours to configure Im lags in new keygen offered in github doc
+2. And Make the Accept the first Connection)
+
+===========================================================================================================================================
+
+Build Perdically =>
+*       *       *       *       *
+min    Hour  DayMonth   Month   DayWeek
+0-59   0-23   1-31       1-12     0-6(Sunday to Saturday)
+
+Task To Trigger on Saturday => * * * * 6
+Task To Trigger on Saturday 11:45 PM=> 45 23 * * 6
+
+Task To Trigger on every 5 minutes => */5 * * * *
+
+===========================================================================================================================================
+
+Webhook For GitSCM Polling
+
+
+Set up Webhook
+
+1. create a webhook in github
+   => Configure the url 
+   => application/json
+   => Make Push event
+   => Add Individual Event If You Want
+
+2. In Jenkins Add Jobs
+    => Select Webhook For GitSCM Polling
+
+3. Check with new commit
+===========================================================================================================================================
+
+Poll SCM => Checks Periodically If any Pushes to the repo then it will build automattically
+Avoid unnecessary old committed repo to build
+
+IN Build periodically wheather There is a change It will build according to the time
+===========================================================================================================================================
+
+Distributed Builds
+
+ => Runs on nodes rather in Jenkins Master
+ => Agent runs on node to execute the Task on behalf of Jenkins master
+ => These do the Actual Work
+ => Master manages these node
+ => Different node can run different os and different tools and enable the Pipelune to build and test the same software
+ => For Workloads more suitable one
+ => Use TCP/Ip Protocol
+
+Types of Distributed Builds
+    Single master Multiple Master
+    Multipleaster Multiple Master
+
+
